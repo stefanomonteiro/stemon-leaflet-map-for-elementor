@@ -1,4 +1,5 @@
 === Stemon Leaflet Map for Elementor ===
+
 Author URI: http://www.stefanomonteiro.com
 Plugin URI: http://www.stefanomonteiro.com
 Contributors: Stemon
