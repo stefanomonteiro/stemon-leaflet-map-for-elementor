@@ -262,12 +262,12 @@ class Leaflet_Widget extends \Elementor\Widget_Base
     public function __construct($data = [], $args = null)
     {
         parent::__construct($data, $args);
+        
+        wp_register_style('leaflet-style', plugin_dir_url('stemon-leaflet-map-for-elementor') . 'stemon-leaflet-map-for-elementor/assets/leaflet/leaflet.css');
+        wp_register_style('stemon-leaflet-stylesheet', plugin_dir_url('stemon-leaflet-map-for-elementor') . 'stemon-leaflet-map-for-elementor/assets/stemon/stemon-leaflet.css', ['leaflet-style']);
 
-        wp_register_style('leaflet-style', plugin_dir_url('leaflet-elementor-addon') . 'leaflet-elementor-addon/assets/leaflet/leaflet.css');
-        wp_register_style('stemon-leaflet-stylesheet', plugin_dir_url('leaflet-elementor-addon') . 'leaflet-elementor-addon/assets/stemon/stemon-leaflet.css', ['leaflet-style']);
-
-        wp_register_script('leaflet-js', plugin_dir_url('leaflet-elementor-addon') . 'leaflet-elementor-addon/assets/leaflet/leaflet.js');
-        wp_register_script('stemon-leaflet-js', plugin_dir_url('leaflet-elementor-addon') . 'leaflet-elementor-addon/assets/stemon/stemon-leaflet.js', ['elementor-frontend', 'leaflet-js'], '1.0.0', true);
+        wp_register_script('leaflet-js', plugin_dir_url('stemon-leaflet-map-for-elementor') . 'stemon-leaflet-map-for-elementor/assets/leaflet/leaflet.js');
+        wp_register_script('stemon-leaflet-js', plugin_dir_url('stemon-leaflet-map-for-elementor') . 'stemon-leaflet-map-for-elementor/assets/stemon/stemon-leaflet.js', ['elementor-frontend', 'leaflet-js'], '1.0.0', true);
     }
 
     public function get_script_depends()
