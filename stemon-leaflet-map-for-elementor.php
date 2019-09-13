@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Leaflet Map For Elementor
+ * Plugin Name: Stemon Leaflet Map For Elementor
  * Description: Leaflet JS Map Addon for Elementor. Great alternative to Google Maps.
  * Version: 1.0
  * Author: Stefano Monteiro
