@@ -228,7 +228,7 @@ class Leaflet_Widget extends \Elementor\Widget_Base
                 'label' => __('Choose Pin', 'stemon'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => plugin_dir_url('leaflet-elementor-addon') . 'leaflet-elementor-addon/assets/img/pin.svg',
+                        'url' => plugin_dir_url('stemon-leaflet-map-for-elementor') . 'stemon-leaflet-map-for-elementor/assets/img/pin.svg', 
                 ],
                 'separator' =>  'before',
                 'frontend_available' => true
