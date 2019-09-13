@@ -43,7 +43,7 @@ class LeafletJSMap extends elementorModules.frontend.handlers.Base {
       getCoord: this.elements.getCoord.selector
     };
 
-    var mymap = L.map("stemonLeafletMap").setView(
+    var stemonMap = L.map("stemonLeafletMap").setView(
       [set.latitude, set.longitude],
       set.zoom
     );
@@ -55,7 +55,9 @@ class LeafletJSMap extends elementorModules.frontend.handlers.Base {
         id: `mapbox.${set.mapStyle}`,
         accessToken: "your.mapbox.access.token"
       }
-    ).addTo(mymap);
+    ).addTo(stemonMap);
+
+    stemonMap.scrollWheelZoom.disable();
 
     var newIcon = L.icon({
       iconUrl: set.pinImage,
@@ -68,7 +70,7 @@ class LeafletJSMap extends elementorModules.frontend.handlers.Base {
       let pinTitle = pin.pin_title || pin.attributes.pin_title;
       let pinContent = pin.pin_content || pin.attributes.pin_content;
       return L.marker([pinLat, pinLon], { icon: newIcon })
-        .addTo(mymap)
+        .addTo(stemonMap)
         .bindPopup(`<h3>${pinTitle}</h3><p>${pinContent}</p>`);
     });
 
@@ -80,9 +82,9 @@ class LeafletJSMap extends elementorModules.frontend.handlers.Base {
           .setContent(
             "Latitude: " + e.latlng.lat + " <br> Longitude: " + e.latlng.lng
           )
-          .openOn(mymap);
+          .openOn(stemonMap);
       }
-      mymap.on("click", onMapClick);
+      stemonMap.on("click", onMapClick);
     }
   }
 }
